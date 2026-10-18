@@ -18,7 +18,7 @@ class Main {
     "(", ")", "[", "]", "{", "}", "/", "\\", "@", "#",
     "$", "%", "^", "&", "*", "+", "=", "<", ">"
     };
-int randomIndex = (int)(Math.random() * decode.length);
+        int randomIndex = (int)(Math.random() * decode.length);
         ArrayList<Object> output = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         System.out.print("Please choose encryption method:\n type 1 for number to letter:\n type 2 for length based: \n type 3 for reverse word: ");
@@ -29,18 +29,18 @@ int randomIndex = (int)(Math.random() * decode.length);
             if (z == 1) {
             while (state) {
             g = scan.nextLine();
-            for (w = 0; w < 57; w++) {
-                for (u = 0; u <= g.length()-1; u++) {
-                    if (g.substring(u, u + 1).toUpperCase().equals(decode[w]) && !(g.equals("exit"))) {
-                    System.out.print(w + " ");
-                    output.add(w);
-                    output.add(" ");
+            for (u = 0; u < g.length(); u++) {
+                for (w = 0; w < decode.length; w++) {
+                    if (g.substring(u, u + 1).toUpperCase().equals(decode[w]) && !g.equals("exit")) {
+                        System.out.print(w + " ");
+                        output.add(w);
+                        output.add(" ");
                     }
                 }
             }
-            if (g.equals("exit")) {
-                state = false;
-            }
+                if (g.equals("exit")) {
+                    state = false;
+                }
             }
         }
             else if (z == 2) {
@@ -72,10 +72,10 @@ int randomIndex = (int)(Math.random() * decode.length);
                         System.out.print(decode[randomIndex]);
                         output.add(decode[randomIndex]);
                     }
-            if (g.equals("exit")) {
-                state = false;
-            }
-        }
+                    if (g.equals("exit")) {
+                        state = false;
+                    }
+                }
         }
     }
             if (z == 2) {
