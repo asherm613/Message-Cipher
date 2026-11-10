@@ -46,14 +46,15 @@ class Main {
             else if (z == 2) {
                 while (state) {
                     l = scan.nextInt();
-                    for ( w = 0; w < 57; w++) {
-                        if (l == w && !(l == -1)) {
-                            System.out.println(decode[w]);
-                            output.add(decode[w]); 
-                        }
-                    }
                     if (l == -1) {
                         state = false;
+                    } else {
+                        for (w = 0; w < decode.length; w++) {
+                            if (l == w) {
+                                System.out.print(decode[w]);
+                                output.add(decode[w]);
+                            }
+                        }
                     }
                 }
             }
