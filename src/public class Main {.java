@@ -48,7 +48,8 @@ class Main {
                     l = scan.nextInt();
                     if (l == -1) {
                         state = false;
-                    } else {
+                    } 
+                    else {
                         for (w = 0; w < decode.length; w++) {
                             if (l == w) {
                                 System.out.print(decode[w]);
