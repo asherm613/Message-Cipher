@@ -31,7 +31,7 @@ class Main {
                 g = scan.nextLine();
                     for (u = 0; u < g.length(); u++) {
                         for (w = 0; w < decode.length; w++) {
-                            if (g.substring(u, u + 1).toLowerCase().equals(decode[w]) && !g.equals("exit")) {
+                            if (g.substring(u, u + 1).toLowerCase().trim().equals(decode[w]) && !g.equals("exit")) {
                                 System.out.print(w + " ");
                                 output.add(w);
                                 output.add(" ");
