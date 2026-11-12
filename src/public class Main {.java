@@ -68,7 +68,7 @@ class Main {
                 System.out.println(" ");
                 while (state) {
                 g = scan.nextLine();
-                    for (w = 0; w < 57; w++) {
+                    for (w = 0; w < decode.length; w++) {
                         if (g.substring(0, 1).toLowerCase().equals(decode[w]) && !(g.equals("exit"))) {
                         for (x = 0; x < w; x++)
                             System.out.print(decode[randomIndex]);
@@ -83,7 +83,7 @@ class Main {
             if (z == 2) {
                 while (state) {
                 g = scan.nextLine();
-                    for ( w = 0; w < 57; w++) {
+                    for ( w = 0; w < decode.length; w++) {
                         if (g.length() == w && !(g.equals("exit"))) {
                             System.out.println(decode[w]);
                             output.add(decode[w]); 
