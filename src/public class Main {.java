@@ -10,7 +10,6 @@ class Main {
         int x = 0;
         String g;
         String h;
-        boolean state = true;
         String[] decode = {
         "", " ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
         "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
@@ -22,6 +21,7 @@ class Main {
         ArrayList<Object> output = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         while (true) {
+            boolean state = true;
             System.out.println("Please choose encryption method:\n type 1 for number to letter:\n type 2 for length based: \n type 3 for reverse word: ");
             int select = scan.nextInt();
             if (select == 1) {
