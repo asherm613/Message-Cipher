@@ -97,10 +97,15 @@ class Main {
                 }
             }
             if (select == 3) {
-                scan.nextLine();
-                h = scan.nextLine();
-                for (k = h.length() -1; k >= 0; k--) {
-                    System.out.print(h.substring(k, k+1));
+                while (state) {
+                    scan.nextLine();
+                    h = scan.nextLine();
+                    for (k = h.length() -1; k >= 0; k--) {
+                        System.out.print(h.substring(k, k+1));
+                    }
+                    if (h.equals("exit")) {
+                        state = false;
+                    }
                 }
             }
             else {   
