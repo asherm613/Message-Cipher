@@ -21,58 +21,74 @@ class Main {
         int randomIndex = (int)(Math.random() * decode.length);
         ArrayList<Object> output = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
-        System.out.print("Please choose encryption method:\n type 1 for number to letter:\n type 2 for length based: \n type 3 for reverse word: ");
-        int select = scan.nextInt();
-        if (select == 1) {
-            System.out.print("1 for encrypt 2 for decrypt: ");
-            z = scan.nextInt();
-            if (z == 1) {
-                while (state) {
-                g = scan.nextLine();
-                    for (u = 0; u < g.length(); u++) {
-                        for (w = 0; w < decode.length; w++) {
-                            if (g.substring(u, u + 1).toLowerCase().trim().equals(decode[w]) && !g.equals("exit")) {
-                                System.out.print(w + " ");
-                                output.add(w);
-                                output.add(" ");
+        while (true) {
+            System.out.println("Please choose encryption method:\n type 1 for number to letter:\n type 2 for length based: \n type 3 for reverse word: ");
+            int select = scan.nextInt();
+            if (select == 1) {
+                System.out.print("1 for encrypt 2 for decrypt: ");
+                z = scan.nextInt();
+                if (z == 1) {
+                    while (state) {
+                    g = scan.nextLine();
+                        for (u = 0; u < g.length(); u++) {
+                            for (w = 0; w < decode.length; w++) {
+                                if (g.substring(u, u + 1).toLowerCase().trim().equals(decode[w]) && !g.equals("exit")) {
+                                    System.out.print(w + " ");
+                                    output.add(w);
+                                    output.add(" ");
+                                }
                             }
                         }
-                    }
-                    if (g.equals("exit")) {
-                        state = false;
-                    }
-                }
-            }
-            else if (z == 2) {
-                while (state) {
-                    l = scan.nextInt();
-                    if (l == -1) {
-                        state = false;
-                    } 
-                    else {
-                        for (w = 0; w < decode.length; w++) {
-                            if (l == w) {
-                                System.out.print(decode[w]);
-                                output.add(decode[w]);
-                            }
+                        if (g.equals("exit")) {
+                            state = false;
                         }
                     }
                 }
+                else if (z == 2) {
+                    while (state) {
+                        l = scan.nextInt();
+                        if (l == -1) {
+                            state = false;
+                        } 
+                        else {
+                            for (w = 0; w < decode.length; w++) {
+                                if (l == w) {
+                                    System.out.print(decode[w]);
+                                    output.add(decode[w]);
+                                }
+                            }
+                        }
+                    }
+                }
             }
-        }
-        if (select == 2) {
-            System.out.print("1 for encrypt 2 for decrypt: ");
-            z = scan.nextInt();
-            scan.nextLine();
-            if (z == 1) {
-                System.out.println(" ");
-                while (state) {
-                g = scan.nextLine();
-                    for (w = 0; w < decode.length; w++) {
-                        if (g.substring(0, 1).toLowerCase().trim().equals(decode[w]) && !(g.equals("exit"))) {
-                        for (x = 0; x < w; x++)
-                            System.out.print(decode[randomIndex]);
-                            output.add(decode[randomIndex]);
+            if (select == 2) {
+                System.out.print("1 for encrypt 2 for decrypt: ");
+                z = scan.nextInt();
+                scan.nextLine();
+                if (z == 1) {
+                    System.out.println(" ");
+                    while (state) {
+                    g = scan.nextLine();
+                        for (w = 0; w < decode.length; w++) {
+                            if (g.substring(0, 1).toLowerCase().trim().equals(decode[w]) && !(g.equals("exit"))) {
+                            for (x = 0; x < w; x++)
+                                System.out.print(decode[randomIndex]);
+                                output.add(decode[randomIndex]);
+                            }
+                            if (g.equals("exit")) {
+                                state = false;
+                            }
+                        }
+                    }
+                }
+                if (z == 2) {
+                    while (state) {
+                    g = scan.nextLine();
+                        for ( w = 0; w < decode.length; w++) {
+                            if (g.length() == w && !(g.equals("exit"))) {
+                                System.out.println(decode[w]);
+                                output.add(decode[w]); 
+                            }
                         }
                         if (g.equals("exit")) {
                             state = false;
@@ -80,32 +96,19 @@ class Main {
                     }
                 }
             }
-            if (z == 2) {
-                while (state) {
-                g = scan.nextLine();
-                    for ( w = 0; w < decode.length; w++) {
-                        if (g.length() == w && !(g.equals("exit"))) {
-                            System.out.println(decode[w]);
-                            output.add(decode[w]); 
-                        }
-                    }
-                    if (g.equals("exit")) {
-                        state = false;
-                    }
+            if (select == 3) {
+                scan.nextLine();
+                h = scan.nextLine();
+                for (k = h.length() -1; k >= 0; k--) {
+                    System.out.print(h.substring(k, k+1));
                 }
             }
-        }
-        if (select == 3) {
-            scan.nextLine();
-            h = scan.nextLine();
-            for (k = h.length() -1; k >= 0; k--) {
-                System.out.print(h.substring(k, k+1));
+            else {   
+                for (int i = 0; i < output.size(); i++) {
+                    System.out.print(output.get(i));
+                }
             }
-        }
-        else {   
-            for (int i = 0; i < output.size(); i++) {
-                System.out.print(output.get(i));
-            }
+            System.out.println("");
         }
     }
 }
